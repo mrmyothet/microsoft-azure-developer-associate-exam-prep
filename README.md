@@ -1,6 +1,6 @@
 # Microsoft Azure Developer Associate (AZ-204) Exam Prep
 
-1. [Create Serverless Applications](1_create_serverless_applications\README.md)
+1. [Create Serverless Applications](1_create_serverless_applications/README.md)
 2. Connect Services with Microsoft Azure Service Bus
 3. Data Storage in Microsoft Azure
 4. Deploy a website with Azure Virtual Machines
