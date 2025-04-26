@@ -15,7 +15,7 @@ namespace Company.Function
         }
 
         [Function(nameof(BlobTriggerExample))]
-        public async Task Run([BlobTrigger("samples-workitems/{name}", Connection = "learnc1059245d17b459c80_STORAGE")] Stream stream, string name)
+        public async Task Run([BlobTrigger("container1/{name}", Connection = "myothet")] Stream stream, string name)
         {
             using var blobStreamReader = new StreamReader(stream);
             var content = await blobStreamReader.ReadToEndAsync();
