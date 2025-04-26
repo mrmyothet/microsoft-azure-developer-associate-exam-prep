@@ -1,0 +1,51 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "subscriptionId": {
+      "value": "3f823f67-c938-4a0e-9189-a6c7d521b953"
+    },
+    "name": {
+      "value": "myothet-azure-functions"
+    },
+    "location": {
+      "value": "Canada Central"
+    },
+    "ftpsState": {
+      "value": "FtpsOnly"
+    },
+    "storageAccountName": {
+      "value": "learn8fbb89f1a79b42afe6"
+    },
+    "sku": {
+      "value": "Dynamic"
+    },
+    "skuCode": {
+      "value": "Y1"
+    },
+    "workerSize": {
+      "value": "0"
+    },
+    "workerSizeId": {
+      "value": "0"
+    },
+    "numberOfWorkers": {
+      "value": "1"
+    },
+    "use32BitWorkerProcess": {
+      "value": false
+    },
+    "netFrameworkVersion": {
+      "value": "v8.0"
+    },
+    "hostingPlanName": {
+      "value": "ASP-learn8fbb89f1a79b4206be0d85f59e-92b1"
+    },
+    "serverFarmResourceGroup": {
+      "value": "learn-8fbb89f1-a79b-4206-be0d-85f59e8d80cf"
+    },
+    "alwaysOn": {
+      "value": false
+    }
+  }
+}
