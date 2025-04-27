@@ -11,6 +11,22 @@
       "type": "http",
       "direction": "out",
       "name": "res"
+    },
+    {
+      "name": "inputBlob",
+      "direction": "in",
+      "type": "blob",
+      "path": "incontainer/{name}",
+      "methods": [],
+      "connection": "AzureWebJobsStorage"
+    },
+    {
+      "name": "outputBlob",
+      "direction": "out",
+      "type": "blob",
+      "path": "outcontainer/{rand-guid}",
+      "methods": [],
+      "connection": "AzureWebJobsStorage"
     }
   ]
 }
