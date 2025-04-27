@@ -1,0 +1,32 @@
+{
+  "bindings": [
+    {
+      "authLevel": "function",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "Request",
+      "methods": ["get", "post"]
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "Response"
+    },
+    {
+      "name": "inputBlob",
+      "direction": "in",
+      "type": "blob",
+      "path": "incontainer/{name}",
+      "methods": [],
+      "connection": "AzureWebJobsStorage"
+    },
+    {
+      "name": "outputBlob",
+      "direction": "out",
+      "type": "blob",
+      "path": "outcontainer/{rand-guid}",
+      "methods": [],
+      "connection": "AzureWebJobsStorage"
+    }
+  ]
+}
