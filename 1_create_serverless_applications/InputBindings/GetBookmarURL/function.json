@@ -11,6 +11,17 @@
       "type": "http",
       "direction": "out",
       "name": "res"
+    },
+    {
+      "name": "bookmark",
+      "direction": "in",
+      "type": "cosmosDB",
+      "partitionKey": "/id",
+      "methods": [],
+      "databaseName": "func-io-learn-db",
+      "collectionName": "Bookmarks",
+      "connectionStringSetting": "myothet2025cosmosdbacc_DOCUMENTDB",
+      "id": "id"
     }
   ]
 }
