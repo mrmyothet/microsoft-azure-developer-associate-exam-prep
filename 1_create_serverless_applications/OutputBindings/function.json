@@ -1,0 +1,26 @@
+{
+  "bindings": [
+    {
+      "authLevel": "function",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": ["get", "post"]
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "res"
+    },
+    {
+      "name": "newbookmark",
+      "direction": "out",
+      "type": "cosmosDB",
+      "partitionKey": "/id",
+      "methods": [],
+      "databaseName": "MyDatabase1",
+      "collectionName": "MyContainer1",
+      "connectionStringSetting": "myothet2025cosmosdbacc_DOCUMENTDB"
+    }
+  ]
+}
