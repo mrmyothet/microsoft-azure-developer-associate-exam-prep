@@ -14,11 +14,12 @@ const df = require("durable-functions");
 module.exports = df.orchestrator(function* (context) {
   const outputs = [];
 
-  // Replace "Hello" with the name of your Durable Activity Function.
-  outputs.push(yield context.df.callActivity("Hello", "Tokyo"));
-  outputs.push(yield context.df.callActivity("Hello", "Seattle"));
-  outputs.push(yield context.df.callActivity("Hello", "London"));
+  /*
+  * We will call the approval activity with a reject and an approved to simulate both
+  */
 
-  // returns ["Hello Tokyo!", "Hello Seattle!", "Hello London!"]
+  outputs.push(yield context.df.callActivity("Approval", "Approved"));
+  outputs.push(yield context.df.callActivity("Approval", "Rejected"));
+
   return outputs;
 });
