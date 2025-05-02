@@ -10,3 +10,5 @@ npm list durable-functions
 
 
 ```
+
+- [Migrate Durable Functions app to version 4 of the Node.js programming model](https://learn.microsoft.com/en-us/azure/azure-functions/durable/durable-functions-node-model-upgrade?tabs=nodejs-v4&pivots=programming-language-javascript)

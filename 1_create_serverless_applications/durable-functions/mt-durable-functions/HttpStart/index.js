@@ -1,10 +1,15 @@
-const df = require("durable-functions");
+const { app } = require('@azure/functions');
+const df = require('durable-functions');
 
-module.exports = async function (context, req) {
-  const client = df.getClient(context);
-  const instanceId = await client.startNew(req.params.functionName, undefined, req.body);
-
-  context.log(`Started orchestration with ID = '${instanceId}'.`);
-
-  return client.createCheckStatusResponse(context.bindingData.req, instanceId);
-};
+app.http('HttpStart', {
+  route: 'orchestrators/OrchFunction',
+  extraInputs: [df.input.durableClient()],
+  handler: async (_request, context) => {
+    const client = df.getClient(context)
+    const status = await client.getStatus('instanceId', {
+      showHistory: false,
+      showHistoryOutput: false,
+      showInput: true
+    });
+  },
+});
