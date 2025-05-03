@@ -1,6 +1,9 @@
 {
-  "azureFunctions.deploySubpath": "1_create_serverless_applications\\BlobTriggerExample/bin/Release/net8.0/publish",
-  "azureFunctions.projectLanguage": "C#",
+  "azureFunctions.deploySubpath": "1_create_serverless_applications\\DemoPythonFunction",
+  "azureFunctions.projectLanguage": "TypeScript",
   "azureFunctions.projectRuntime": "~4",
-  "azureFunctions.preDeployTask": "publish (functions)"
+  "azureFunctions.preDeployTask": "npm prune (functions)",
+  "azureFunctions.postDeployTask": "npm install (functions)",
+  "debug.internalConsoleOptions": "neverOpen",
+  "azureFunctions.projectLanguageModel": 4
 }
