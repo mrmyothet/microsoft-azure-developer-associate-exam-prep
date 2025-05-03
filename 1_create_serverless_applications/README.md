@@ -40,3 +40,21 @@ curl \
 --header "x-functions-key: <your-function-key>" \
 --request POST --data "{\"name\": \"Azure Function\"}" <your-https-url>
 ```
+
+### Create a Python function in Azure from the command line
+```bash 
+func --version 
+
+func init --python
+
+func new --name HttpExample --template "HTTP trigger" --authlevel "anonymous"
+
+func start
+
+```
+
+```bash 
+
+winget install --exact --id Microsoft.AzureCLI
+
+```
