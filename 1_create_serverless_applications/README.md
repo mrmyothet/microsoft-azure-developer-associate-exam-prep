@@ -57,4 +57,18 @@ func start
 
 winget install --exact --id Microsoft.AzureCLI
 
+az login
+
+az group create --name "AzureFunctionsQuickstart" --location "southeastasia"
+
+az storage account create --name "myothetstorageacc123" --location "southeastasia" --resource-group "AzureFunctionsQuickstart" --sku Standard_LRS
+
+az functionapp create --resource-group "AzureFunctionsQuickstart" --consumption-plan-location southeastasia --runtime python --runtime-version 3.12 --functions-version 4 --name "myothetfunctionappname123" --os-type linux --storage-account "myothetstorageacc123"
+
+```
+
+```bash
+
+func azure functionapp publish myothetfunctionappname123
+
 ```
