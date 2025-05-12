@@ -401,3 +401,4 @@ FodyWeavers.xsd
 
 1_create_serverless_applications/durable-functions/context.json
 1_create_serverless_applications/stock-prototype/setup-resources/.env
+1_create_serverless_applications/stock-prototype/start/client/.env
