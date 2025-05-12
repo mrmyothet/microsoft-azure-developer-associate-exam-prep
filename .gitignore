@@ -400,3 +400,4 @@ FodyWeavers.xsd
 *.sln.iml
 
 1_create_serverless_applications/durable-functions/context.json
+1_create_serverless_applications/stock-prototype/setup-resources/.env
