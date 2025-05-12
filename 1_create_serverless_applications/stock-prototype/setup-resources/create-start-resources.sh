@@ -52,12 +52,12 @@ az configure --defaults group="$RESOURCE_GROUP_NAME"
 printf "Using resource group $RESOURCE_GROUP_NAME\n"
 
 export STORAGE_ACCOUNT_NAME=signalr$(openssl rand -hex 5)
-export COMSOSDB_NAME=signalr-cosmos-$(openssl rand -hex 5)
+export COSMOSDB_NAME=signalr-cosmos-$(openssl rand -hex 5)
 
 printf "Subscription Name: ""$SUBSCRIPTION_NAME"" \n"
 printf "Resource Group Name: $RESOURCE_GROUP_NAME\n"
 printf "Storage Account Name: $STORAGE_ACCOUNT_NAME\n"
-printf "CosmosDB Name: $COMSOSDB_NAME\n"
+printf "CosmosDB Name: $COSMOSDB_NAME\n"
 
 printf "Creating Storage Account\n"
 
@@ -72,23 +72,24 @@ printf "Creating CosmosDB Account\n"
 
 az cosmosdb create  \
   --subscription "$SUBSCRIPTION_NAME" \
-  --name $COMSOSDB_NAME \
+  --name $COSMOSDB_NAME \
   --resource-group $RESOURCE_GROUP_NAME
 
 printf "Creating CosmosDB db\n"
 # Create stocksdb database
 az cosmosdb sql database create \
-    --account-name $COMSOSDB_NAME \
+    --account-name $COSMOSDB_NAME \
     --name stocksdb
 
 printf "Creating CosmosDB container\n"
 # Create stocks container
-az cosmosdb sql container create \
-    --account-name $COMSOSDB_NAME \
-    --database-name stocksdb \
-    --name stocks \
+# az cosmosdb sql container create \
+#     --account-name $COSMOSDB_NAME \
+#     --database-name stocksdb \
+#     --name stocks \
+#     --partition-key-path "/symbol"
     # --partition-key-path \"\/symbol\"
-    --partition-key-path "/symbol"
+printf "Skip creating CosmosDB container\n"
 
 printf "Get storage connection string\n"
 
